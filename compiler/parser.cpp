@@ -480,7 +480,7 @@ Parser::parse_enumstruct()
     new (&stmt->fields()) PoolArray<EnumStructField>(fields);
     new (&stmt->methods()) PoolArray<FunctionDecl*>(methods);
 
-    lexer_->require_newline(TerminatorPolicy::Newline);
+    lexer_->require_newline(TerminatorPolicy::NewlineOrSemicolon);
     return stmt;
 }
 
